@@ -1,0 +1,12 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Set base directory for WAMP subdirectory installation
+RewriteBase /carthage-tech-backend/public/
+
+# Don't rewrite if the file or directory exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other requests to index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
